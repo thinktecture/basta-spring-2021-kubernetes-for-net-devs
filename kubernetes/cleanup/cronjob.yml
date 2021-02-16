@@ -1,0 +1,42 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cleanup
+  namespace: live
+  labels:
+    component: cleanup
+    conference: BASTA
+spec:
+  jobTemplate:
+    metadata:
+      name: cleanup
+      labels:
+        component: cleanup
+        conference: BASTA
+    spec:
+      template:
+        metadata:
+          labels:
+            component: cleanup
+            conference: BASTA
+        spec:
+          containers:
+          - image: thhbasta.azurecr.io/cleanup:1
+            name: cleanup
+            env:
+            - name: Thinktecture__BastaApi__DatabaseConnectionString
+              valueFrom:
+                secretKeyRef:
+                  name: sql
+                  key: ConnectionString
+            - name: Thinktecture__BastaApi__AuditLogRetentionDays
+              value: "2"
+            resources:
+              requests:
+                cpu: 50m
+                memory: 64Mi
+              limits:
+                cpu: 75m
+                memory: 96Mi
+          restartPolicy: Never
+  schedule: '*/5 * * * *'

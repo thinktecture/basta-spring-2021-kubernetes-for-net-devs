@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    component: api
+    conference: BASTA
+  name: api
+  namespace: live
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: api
+      conference: BASTA
+  template:
+    metadata:
+      labels:
+        component: api
+        conference: BASTA
+    spec:
+      containers:
+      - image: thhbasta.azurecr.io/api:1
+        name: api
+        env:
+          - name: Thinktecture__BastaApi__DatabaseConnectionString
+            valueFrom:
+              secretKeyRef:
+                name: sql
+                key: ConnectionString
+          - name: Thinktecture__BastaApi__AuditLogRetentionDays
+            value: "2"
+        ports:
+        - containerPort: 80
+          name: http
+        readinessProbe:
+          httpGet:
+            port: 80
+            path: /readiness
+        livenessProbe:
+          httpGet:
+            port: 80
+            path: /liveness
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi

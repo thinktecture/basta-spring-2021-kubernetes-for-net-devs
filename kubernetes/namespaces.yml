@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: live
+  labels:
+    conference: basta
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx
+  labels:
+    conference: basta

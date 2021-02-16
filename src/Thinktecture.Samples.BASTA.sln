@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Samples.BASTA.Entities", "Thinktecture.Samples.BASTA.Entities\Thinktecture.Samples.BASTA.Entities.csproj", "{B8B658B3-29C4-428B-9313-7A89DF167FD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Samples.BASTA.Jobs.Cleanup", "Thinktecture.Samples.BASTA.Jobs.Cleanup\Thinktecture.Samples.BASTA.Jobs.Cleanup.csproj", "{B35AEB84-4687-46CD-A7E3-F86B35B344FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Samples.BASTA.WebAPI", "Thinktecture.Samples.BASTA.WebAPI\Thinktecture.Samples.BASTA.WebAPI.csproj", "{A1BDCB65-B89C-4DCD-BD62-F1CB45DA2243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.Samples.BASTA.Configuration", "Thinktecture.Samples.BASTA.Configuration\Thinktecture.Samples.BASTA.Configuration.csproj", "{38754982-251A-4D81-A45D-15A67FB14511}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8B658B3-29C4-428B-9313-7A89DF167FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B658B3-29C4-428B-9313-7A89DF167FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B658B3-29C4-428B-9313-7A89DF167FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B658B3-29C4-428B-9313-7A89DF167FD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35AEB84-4687-46CD-A7E3-F86B35B344FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35AEB84-4687-46CD-A7E3-F86B35B344FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35AEB84-4687-46CD-A7E3-F86B35B344FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35AEB84-4687-46CD-A7E3-F86B35B344FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1BDCB65-B89C-4DCD-BD62-F1CB45DA2243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1BDCB65-B89C-4DCD-BD62-F1CB45DA2243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1BDCB65-B89C-4DCD-BD62-F1CB45DA2243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1BDCB65-B89C-4DCD-BD62-F1CB45DA2243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38754982-251A-4D81-A45D-15A67FB14511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38754982-251A-4D81-A45D-15A67FB14511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38754982-251A-4D81-A45D-15A67FB14511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38754982-251A-4D81-A45D-15A67FB14511}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
