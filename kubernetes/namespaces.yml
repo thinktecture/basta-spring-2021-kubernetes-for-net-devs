@@ -8,6 +8,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: nginx
+  name: nginx-ingress
   labels:
     conference: basta

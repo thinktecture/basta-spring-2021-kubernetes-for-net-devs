@@ -34,3 +34,6 @@ acrId=$(az acr show -n $acrName --query "id" -o tsv)
 
 echo "Creating Azure Kubernetes Servivce " $aksName
 az aks create -n $aksName -g $rgName --location $location -c 1 --enable-managed-identity --attach-acr $acrId
+
+echo "Downloading credentials for kubectl"
+az aks get-credentials -n $aksName -g $rgName
