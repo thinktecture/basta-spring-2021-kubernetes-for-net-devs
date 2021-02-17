@@ -52,8 +52,8 @@ namespace Thinktecture.Samples.BASTA.WebAPI
                 setup.Providers.Clear();
                 setup.Providers.Add(new GzipCompressionProvider(options));
             });
-            services.AddHealthChecks();
             
+            services.AddHealthChecks();
             services.AddControllers();
             services.AddSwaggerGen(setup =>
             {
@@ -81,6 +81,7 @@ namespace Thinktecture.Samples.BASTA.WebAPI
             // end swagger exposure
 
             app.UseResponseCompression();
+            
             // .NET is not responsible for configuring HTTPS 
             // app.UseHttpsRedirection();
 
@@ -88,6 +89,7 @@ namespace Thinktecture.Samples.BASTA.WebAPI
             app.UseAuthorization();
             app.UseEndpoints(endpoints => { 
                 endpoints.MapControllers(); 
+                // add support for Kubernetes probes (liveness and readiness)
                 endpoints.MapHealthChecks("/readiness");
                 endpoints.MapHealthChecks("/liveness");
             });
