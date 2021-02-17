@@ -1,11 +1,18 @@
 #!/bin/bash
+echo "This script will build and push all Docker images to Azure Container registry"
 
-docker build . -f API.Dockerfile -t thhbasta.azurecr.io/api:1
-docker build . -f Entities.Dockerfile -t thhbasta.azurecr.io/entities:1
-docker build . -f Cleanup.Dockerfile -t thhbasta.azurecr.io/cleanup:1
+echo "Please provide the name of your ACR instance (just the prefix before .azurecr.io)"
 
-az acr login -n thhbasta
+read -p "ACR prefix: " acrPrefix
 
-docker push thhbasta.azurecr.io/api:1
-docker push thhbasta.azurecr.io/entities:1
-docker push thhbasta.azurecr.io/cleanup:1
+echo "Which tag should be created for the images?"
+read -p "Image tag: " imageTag
+docker build . -f API.Dockerfile -t $acrPrefix.azurecr.io/api:$imageTag
+docker build . -f Entities.Dockerfile -t $acrPrefix.azurecr.io/entities:$imageTag
+docker build . -f Cleanup.Dockerfile -t $acrPrefix.azurecr.io/cleanup:$imageTag
+
+az acr login -n $acrPrefix
+
+docker push $acrPrefix.azurecr.io/api:$imageTag
+docker push $acrPrefix.azurecr.io/entities:$imageTag
+docker push $acrPrefix.azurecr.io/cleanup:$imageTag
